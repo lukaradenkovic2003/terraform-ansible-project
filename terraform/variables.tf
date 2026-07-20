@@ -55,3 +55,13 @@ variable "DbSub3CIDR" {
 variable "s3_bucket_name" {
   default = "devops-assessment-luka-static-content"
 }
+
+variable "instance_count" {
+  default = 3
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
