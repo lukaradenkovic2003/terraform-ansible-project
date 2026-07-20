@@ -52,3 +52,6 @@ variable "DbSub2CIDR" {
 variable "DbSub3CIDR" {
   default = "172.21.9.0/24"
 }
+variable "s3_bucket_name" {
+  default = "devops-assessment-luka-static-content"
+}
