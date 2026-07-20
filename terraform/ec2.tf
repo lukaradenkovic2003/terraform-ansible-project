@@ -17,6 +17,7 @@ data "aws_ami" "Ubuntu22ami" {
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.Ubuntu22ami.id
   instance_type          = var.instance_type
+  key_name = aws_key_pair.devops_key.key_name
   subnet_id              = module.vpc.private_subnets[count.index]
   count                  = var.instance_count
   vpc_security_group_ids = [aws_security_group.devops-assessment-ec2-sg.id]

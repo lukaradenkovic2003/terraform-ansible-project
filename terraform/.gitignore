@@ -1,0 +1,5 @@
+devops-key
+devops-key.pub
+*.tfstate
+*.tfstate.backup
+.terraform/
