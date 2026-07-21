@@ -54,4 +54,12 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_outbound_fromEC2" {
   ip_protocol       = "-1"
 }
 
+resource "aws_vpc_security_group_ingress_rule" "allow_ssh_from_bastion" {
+  security_group_id            = aws_security_group.devops-assessment-ec2-sg.id
+  referenced_security_group_id = aws_security_group.bastion-sg.id
+  ip_protocol                  = "tcp"
+  from_port                    = 22
+  to_port                      = 22
+}
+
 

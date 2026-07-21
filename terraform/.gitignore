@@ -3,3 +3,4 @@ devops-key.pub
 *.tfstate
 *.tfstate.backup
 .terraform/
+terraform.tfvars

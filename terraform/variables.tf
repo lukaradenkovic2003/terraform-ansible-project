@@ -12,7 +12,7 @@ variable "VpcCIDR" {
   default = "172.21.0.0/16"
 }
 variable "PROJECT" {
-  default = "DevOps assessment"
+  default = "devops-assessment"
 }
 variable "Zone1" {
   default = "us-east-1a"
@@ -64,4 +64,9 @@ variable "instance_type" {
   description = "EC2 instance type"
   type        = string
   default     = "t2.micro"
+}
+
+variable "my_ip" {
+  description = "Your public IP for SSH access to bastion"
+  type        = string
 }
