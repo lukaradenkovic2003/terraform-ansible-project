@@ -6,11 +6,16 @@
   tasks:
     - name: Update apt cache
       apt:
-        update_cache: yes
+        update_cache: true
 
     - name: Install nginx
       apt:
         name: nginx
+        state: present
+
+    - name: Install AWS CLI
+      apt:
+        name: awscli
         state: present
 
     - name: Copy nginx configuration file
@@ -22,11 +27,14 @@
         mode: '0644'
       notify: restart nginx
 
+    - name: Download index.html from S3
+      command: aws s3 cp s3://devops-assessment-luka-static-content/index.html /var/www/html/index.html
+
     - name: Ensure nginx is running and enabled
       service:
         name: nginx
         state: started
-        enabled: yes
+        enabled: true
 
   handlers:
     - name: restart nginx
