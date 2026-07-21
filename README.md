@@ -18,7 +18,7 @@ Design a system that contains:
 
 ## Architecture
 
-
+```text
 Internet → IGW → ALB (80/443, HTTPS redirect)
                    │
                    ▼
@@ -31,9 +31,10 @@ Internet → IGW → ALB (80/443, HTTPS redirect)
      │
      ▼
 S3 bucket (static content, retrieved via IAM role)
+```
 
-Database subnets: exist with blackhole route, no associated resource
-Bastion host: in frontend subnet, used only for SSH access for Ansible
+* **Database subnets:** Exist with blackhole route, no associated resource.
+* **Bastion host:** Located in frontend subnet, used only for SSH access for Ansible.
 
 ## Project Structure
 
