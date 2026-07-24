@@ -14,8 +14,6 @@ Design a system that contains:
 - Target group connected to EC2 instances on port 80
 - (Stretch) Ansible playbook that installs nginx and injects configuration
 
- ## Architecture
-
 ## Architecture
 
 ```text
